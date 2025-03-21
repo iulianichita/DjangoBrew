@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mic Dejun MENU</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/micdejun.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    {% load static %}
+    <script src="{% static 'js/micdejun.js'%}"></script>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="/aplicatie_ex/cart">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+
+        {% if is_empty %}
+            <br/><p style="position: absolute; top: 45%; left:30%; font-size: 20px;"><i> Niciun rezultat nu corespunde căutării. </i></p>
+        {% endif %}
+
+        {% comment %} {% for m in obiecte %}
+        <div class="menu-item">
+            <p style="font-size: 20px;"><b style="color: #ffaf84;">LEI {{m.pret}}</b>&nbsp;-&nbsp;<b>{{ m.nume }}</b></p>
+                <p style="font-size: 15px; margin-top: 0px;">({{m.cantitate}}g) &nbsp; 
+
+                    {% if m.ingrediente_mancare.all %}
+                        {% for i in m.ingrediente_mancare.all %}
+                            {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                </p>
+        </div>
+        {% endfor %} {% endcomment %}
+
+        {% for m in obiecte %}
+        <div class="menu-item" data-product-id="{{ m.id }}" data-product-type="mancare">
+            <p onclick="window.location.href='/aplicatie_ex/micdejun_view/{{m.id}}'" style="font-size: 20px;"><b style="color: #ffaf84;">LEI {{ m.pret }}</b>&nbsp;-&nbsp;<b>{{ m.nume }}</b></p>
+            <p style="font-size: 15px; margin-top: 0px;">({{ m.cantitate }}g) &nbsp; 
+                {% if m.ingrediente_mancare.all %}
+                    {% for i in m.ingrediente_mancare.all %}
+                        {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </p>
+            
+            <div class="cart-actions">
+                <button class="decrease">-</button>
+                <input type="number" class="quantity" value="0" min="0" max="10">
+                <button class="increase">+</button>
+                <button class="btn_cos_virtual" data-id="{{ m.id }}" data-nume="{{ m.nume }}" data-pret="{{m.pret}}">Adauga in cos</button>
+                <button class="remove-from-cart" data-id="{{ m.id }}" data-nume="{{ m.nume }}" data-pret="{{m.pret}}">Sterge din cos</button>
+            </div>
+        </div>
+        {% endfor %}
+
+        </div>
+
+        <div class="buttons">
+
+            {% if prev != 0 %}
+            <a href="/aplicatie_ex/micdejun/{{ prev }}/" class="button" style="color: white;"> < Previous </a>&nbsp;
+            {% endif %}
+
+            {% if total_pagini != 0 %}
+                <p style="color:white;"> Pag. {{no_page}} din {{total_pagini}} </p>
+            {% endif %}
+
+            {% if next != 0 and total_pagini != 1 %}
+            <a href="/aplicatie_ex/micdejun/{{ next }}/" class="button" style="color: white;"> Next > </a>
+            {% endif%}
+
+        </div>
+
+        <div class="filtre">
+
+            <form method="post" id="filter-form">
+                {% csrf_token %}
+                <div>
+                    <p style="color:white">Categorie: </p>
+                    <div>{{ form.nume }}</div>
+                </div>
+                <div>
+                    <p style="color:white">Pret minim: </p>
+                    <div>{{ form.min_price }}</div>
+                    <div>
+                        {% if form.min_price.errors %}
+                            {% for error in form.min_price.errors %}
+                                <div class="error" style="color: #ffaf84">{{ error }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div>
+                    <p style="color:white">Pret maxim: </p>
+                    <div>{{ form.max_price }}</div>
+                    <div>
+                        {% if form.max_price.errors %}
+                            {% for error in form.max_price.errors %}
+                                <div class="error" style="color: #ffaf84"><i>{{ error }}</i></div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div>
+                    <p style="color:white">Cantitate: </p>
+                    <div>{{ form.cantitate }}</div>
+                    <div>
+                        {% if form.cantitate.errors %}
+                            {% for error in form.cantitate.errors %}
+                                <div class="error" style="color: #ffaf84;"><i>{{ error }}</i></div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <button type="submit">Filtreaza</button>
+                <p id="responseMessage"></p>
+            </form>
+
+        </div>
+
+        {% if username %}
+        <div id="banner" onclick="window.location.href='/aplicatie_ex/oferta?banner_click=true'">Oferta reducere 50%!</div>
+        {% endif %}
+
+        <div class="f_msg">
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <p class="{{ message.tags }}">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+    </section>
+
+    <script>
+        function displayBannerWithProbability() {
+            const probability = Math.random();
+            if (probability <= 0.3) {
+                const banner = document.getElementById('banner');
+                banner.style.display = 'block';
+                
+                setTimeout(() => {
+                    banner.style.display = 'none';
+                }, 7000);
+            }
+        }
+
+        window.onload = displayBannerWithProbability;
+    </script>
+
+    </body>
+</html>

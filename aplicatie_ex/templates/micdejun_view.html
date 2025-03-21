@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{mancare_item.nume}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/micdejun_view.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    {% load static %}
+    <script src="{% static 'js/micdejun_view.js'%}"></script>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .hero-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .adresa {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .telefon {
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        #imagesdiv {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .content{
+            transform: scale(1.05);
+        }
+
+        .aboutus-image {
+            width: 35%;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .aboutus-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+    
+
+    <section class="hero-section">
+
+        <div class="content">
+
+        <p style="color: grey; text-align:center">
+        Aici poti vedea informatii explicite despre produs!</p>
+
+
+    <div class="container">
+
+        {% if mancare_item.image %}
+        <div id="imagesdiv">
+            <img src="{{ mancare_item.image.url }}" alt="mancare" class="image" style="width: 300px;">
+        {% endif %}
+        </div>
+
+        <div class="lista"> &nbsp;
+            <h2> >> {{ mancare_item.nume }}</h2>
+            <p>CANTITATE : &nbsp; {{ mancare_item.cantitate }} grame</p>
+            <p>PRET : &nbsp; {{ mancare_item.pret }} lei</p>
+            <p>TIMP PREPARARE : &nbsp; {{ mancare_item.timp_preparare }} min</p>
+            <p>INGREDIENTE  : &nbsp; </p>
+            <p>
+            {% if mancare_item.ingrediente_mancare.all %}
+                    {% for i in mancare_item.ingrediente_mancare.all %}
+                        {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+            {% endif %} </p>
+            <div class="cart-actions">
+                <button class="decrease">-</button>
+                <input type="number" class="quantity" value="0" min="0" max="10">
+                <button class="increase">+</button>
+                <button class="btn_cos_virtual" data-id="{{ mancare_item.id }}" data-nume="{{ mancare_item.nume }}" data-pret="{{mancare_item.pret}}">Adauga in cos</button>
+                <button class="remove-from-cart" data-id="{{ mancare_item.id }}" data-nume="{{ mancare_item.nume }}" data-pret="{{mancare_item.pret}}">Sterge din cos</button>
+            </div>
+        </div>
+
+    </div>
+    <br/>
+    <div style="text-align: center">
+        <button class="back" onclick="window.history.back()">Back</button> &nbsp;
+    </div>
+
+
+    </section>
+
+
+    </body>
+</html>

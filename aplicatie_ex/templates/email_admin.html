@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ subiect }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/email_admin.css'%}">
+</head>
+<body>
+    <h1 style="color:red">{{ subiect }}</h1>
+    {% if username %}
+        <p> {{ username }} cu ip-ul {{ ip }} a incercat sa se logheze de mai mult de 3 ori in mai putin de 2 minute.</p>
+    {% elif email is not None %}
+        <p>User-ul cu email-ul {{ email }} a incercat sa ne preia site-ul.</p>
+    {% endif %}
+</body>
+</html>

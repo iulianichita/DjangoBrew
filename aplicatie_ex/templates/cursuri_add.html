@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursuri add</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cart.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    {% load static %}
+    <script src="{% static 'js/cart.js'%}"></script>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+    
+
+    <section class="hero-section">
+
+        <div class="content">
+
+            {% comment %} <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br/>
+                <button type="submit">Adauga elev</button>
+                {% if field.errors %}
+                <div class="error">
+                    {% for error in field.errors %}
+                        <p style='color: red'>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            </form>
+                        
+            <p style='color: red'>{{ form.non_field_errors }}</p> {% endcomment %}
+
+            <form method="post">
+                    {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div>
+                    {{ form.denumire.label_tag }} {{ form.denumire }}
+                    {{ form.denumire.errors }}
+                </div> <br/>
+                <div>
+                    {{ form.numar_credite.label_tag }} {{ form.numar_credite }}
+                    {{ form.numar_credite.errors }}
+                </div> <br/>
+                <div>
+                    {{ form.student.label_tag }} {{ form.student }}
+                    {{ form.student.errors }}
+                </div>
+
+                <button type="submit">Adauga curs</button>
+                <button class="back" onclick="window.history.back()">Inapoi</button>
+
+            </form>
+            
+    </div>
+
+    </section>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>titlu_tab</title>
+    </head>
+    <body>
+        <h2>Operatii</h2>
+        <ul>
+            {% for element in lista %}
+            <li>
+                {% if element.operatie == "suma" %}
+                    {{ element.a }} + {{ element.b }} = {{element.rezultat}}
+                {% elif element.operatie == "diferenta" %}
+                    {{ element.a }} - {{ element.b }} = {{element.rezultat}}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

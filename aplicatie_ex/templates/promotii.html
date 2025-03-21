@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Promotie</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/promotii.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class="login_class" href="/aplicatie_ex/login">Log In</a></li>
+                {% else %}
+                <li><a class="login_class" href="/aplicatie_ex/loginpage">Profile</a></li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+            <div class="introtext">
+                <h2>NEW DISCOUNT</h2>
+                <p>Please enter your promotion details.</p>
+            </div>
+
+            <form method="post">
+                {% csrf_token %}
+            <div class="col1">
+                <div>
+                    {{ form.nume.label_tag }} {{ form.nume }}
+                </div>
+                <div>
+                    {{ form.data_creare.label_tag }} {{ form.data_creare }}
+                </div>
+                <div>
+                    {{ form.data_expirare.label_tag }} {{ form.data_expirare }}
+                </div>
+                <div>
+                    {{ form.reducere.label_tag }} {{ form.reducere }}
+                </div>
+                <div>
+                    {{ form.tip_promotie.label_tag }} {{ form.tip_promotie }}
+                </div>
+                <div>
+                    {{ form.subiect.label_tag }} {{ form.subiect }}
+                </div>
+            </div> 
+            <div class="col2">
+                <div>
+                    {{ form.mesaj.label_tag }} {{ form.mesaj }}
+                </div>
+
+                <button type="button" class="collapsible">▾ Categorii mancare</button>
+                <div class="categorii" style="display: none; font-size: 14px">
+                    {{ form.mancare }}
+                </div> <br/>
+
+                <button type="button" class="collapsible">▾ Categorii bautura</button>
+                <div class="categorii" style="display: none; font-size: 14px">
+                    {{ form.bautura }}
+                </div> <br/>
+
+                <button type="button" class="collapsible" style="width: 220px">▾ Categorii desert</button>
+                <div class="categorii" style="display: none; font-size: 14px; width: 180px">
+                    {{ form.desert }}
+                </div> <br/>
+
+                <button type="submit">Inregistreaza promotia</button>
+            </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+
+        var hamburgerBtn = document.getElementById("hamburger-btn");
+        var closeMenuBtn = document.getElementById("close-menu-btn");
+        var menuLinks = document.querySelector(".menu-links");
+
+        hamburgerBtn.addEventListener("click", function() {
+            menuLinks.style.display = "flex";
+        });
+
+        closeMenuBtn.addEventListener("click", function() {
+            menuLinks.style.display = "none";
+        });
+
+    </script>
+
+</body>
+</html>

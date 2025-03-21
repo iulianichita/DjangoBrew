@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Succes confirm mail</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/confirmare_mail.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+
+            {% load static %}
+            <img src= "{% static 'images\coffeebean-coffeeshop.jpg'%}" alt="" width="40%" style="border-radius: 4px"> <br/>
+
+            <i><h2>Email-ul dumneavoastra a fost confirmat cu succes.</h2></i>
+            <br/>
+            <button type="button" onclick="window.location.href='/aplicatie_ex/main'">
+                Inapoi la pagina principala
+            </button>
+            <button type="button" onclick="window.location.href='/aplicatie_ex/login'" style="width: 100px">
+                Log in
+            </button>
+
+        </div>
+    </section>
+
+    </body>
+</html

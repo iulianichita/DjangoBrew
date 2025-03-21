@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Mic Dejun</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add_micdejun.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+
+            <div id="text" style="text-align: center">
+            <h2>ADD MIC DEJUN</h2>
+            <p style="margin-top: 8px; font-size: 14px">Te rog adauga mai jos detaliile.</p>
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+            <div id="col1">
+                <div>
+                    {{ form.nume.label_tag }} {{ form.nume }}
+                    {% if form.nume.errors %}
+                        {% for e in form.nume.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.pret.label_tag }} {{ form.pret }}
+                    {% if form.pret.errors %}
+                        {% for e in form.pret.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.cantitate.label_tag }} {{ form.cantitate }}
+                    {% if form.cantitate.errors %}
+                        {% for e in form.cantitate.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    {{ form.categorie.label_tag }} {{ form.categorie }}
+                    {% if form.categorie.errors %}
+                        {% for e in form.categorie.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div style="background-color: transparent; border:none">
+                    Incarca o imagine:{{ form.image }}
+                    {% if form.image.errors %}
+                        {% for e in form.image.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+            <div id="col2">
+                <div id="id_default_marime">
+                    <br/>Adaugati marimea?&nbsp; {{ form.default_marime }} <br/> <span class="help_text">{{form.default_marime.help_text}}</span>
+                    {% if form.default_marime.errors %}
+                        {% for e in form.default_marime.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="marimeDiv" class="hidden">
+                    {{ form.marime.label_tag }} &nbsp; {{ form.marime }}
+                    {% if form.marime.errors %}
+                        {% for e in form.marime.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="id_add_timp_preparare">
+                    Adaugati timp preparare?&nbsp; {{ form.add_timp_preparare}}  <span class="help_text">{{form.add_timp_preparare.help_text}}</span>
+                    {% if form.add_timp_preparare.errors %}
+                        {% for e in form.add_timp_preparare.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="timpPreparareDiv" class="hidden">
+                    {{ form.timp_preparare.label_tag }} {{ form.timp_preparare }}
+                    <span class="small-text" style="font-size: 0.8em; vertical-align: middle;">min</span>
+                    {% if form.timp_preparare.errors %}
+                        {% for e in form.timp_preparare.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    <button type="button" id="ingredienteBtn" style="width: 220px">Alege ingrediente</button>
+                    {% if form.ingrediente_mancare.errors %}
+                        {% for e in form.ingrediente_mancare.errors %}
+                            <p style="color: orange; font-size: 14px">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div id="ingredienteModal" class="modal"><br/>
+                    <p style="text-align: center; font-size: 20px">Selecteaza ingredientele</p>
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        {{ form.ingrediente_mancare }}
+                    </div>
+                </div>
+
+                {% if form.non_field.errors %}
+                    {% for e in form.non_field.errors %}
+                        <p style="color: orange; font-size: 14px">{{ e }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                <button type="submit" class="btn">Add</button>
+            </div>
+
+            </form>
+        
+        </div>
+    </section>
+
+
+    <script>
+        var modal = document.getElementById("ingredienteModal");
+        var btn = document.getElementById("ingredienteBtn");
+        var txt = document.getElementById("text");
+
+        btn.onmouseover = function() {
+            btn.textContent = "Click to expand";
+        }
+        btn.onmouseout = function() {
+            btn.textContent = "Alege ingrediente";
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+            txt.style.display = "none";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+            txt.style.display = "block";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                txt.style.display = "block";
+            }
+        }
+
+        var defaultMarimeCheckbox = document.querySelector("#id_default_marime input[type='checkbox']");
+        var marimeDiv = document.getElementById("marimeDiv");
+        var addTimpPreparareCheckbox = document.querySelector("#id_add_timp_preparare input[type='checkbox']");
+        var timpPreparareDiv = document.getElementById("timpPreparareDiv");
+
+        defaultMarimeCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                marimeDiv.classList.add("visible");
+            } else {
+                marimeDiv.classList.remove("visible");
+            }
+        });
+        
+        addTimpPreparareCheckbox.addEventListener("change", function() {
+            if (this.checked) {
+                timpPreparareDiv.classList.add("visible");
+            } else {
+                timpPreparareDiv.classList.remove("visible");
+            }
+        });
+        
+        </script>
+
+    </body>
+</html>

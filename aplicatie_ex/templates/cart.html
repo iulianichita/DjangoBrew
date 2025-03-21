@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cos de cumparaturi</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/cart.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    {% load static %}
+    <script src="{% static 'js/cart.js'%}"></script>
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+    
+
+    <section class="hero-section">
+
+        <div class="content">
+
+            <h2>Cos de cumparaturi</h2> <br/>
+
+            <div class="sort-container">
+                <label for="sort-by">Sortare:</label>
+                <select id="sort-by">
+                    <option value="" disabled selected>Selectează sortarea</option>
+                    <option value="name-asc">Nume (A-Z)</option>
+                    <option value="name-desc">Nume (Z-A)</option>
+                    <option value="price-asc">Preț (Crescător)</option>
+                    <option value="price-desc">Preț (Descrescător)</option>
+                </select>
+            </div>
+            
+
+            <div id="cart-items">
+            </div>
+            
+            <br/> <br/>
+            <div id="cart-total">
+            </div>
+            
+            
+            <br/>
+            <div style="text-align: center; margin-left: -1100px">
+                <button class="back" onclick="window.history.back()">Back</button> &nbsp;
+            </div>
+            <div style="text-align: center; margin-left: 1100px; margin-top: -60px">
+                <button id="buy">Cumpara</button> &nbsp;
+            </div>
+
+    </section>
+
+
+    <script>
+
+        var btn_cumpara = document.getElementById("buy");
+        btn_cumpara.onclick = function() {
+        let cart = localStorage.getItem("cos_virtual");
+        let products = [];
+    
+        if (cart) {
+            let cartItems = cart.split(",");
+    
+            cartItems.forEach(item => {
+                let [name, qty, price] = item.split("/");
+                products.push({
+                    name: name,
+                    quantity: parseInt(qty, 10),
+                    price: parseFloat(price)
+                });
+            });
+        }
+        fetch('http://127.0.0.1:8000//aplicatie_ex/proceseaza_date', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{csrf_token}}', 
+            },
+            body: JSON.stringify({
+                products: products,  
+                total: products.reduce((sum, product) => sum + (product.price * product.quantity), 0) 
+            })
+            })
+            .then(raspuns => {
+                if (!raspuns.ok) {
+                    throw new Error(`Eroare HTTP. Status: ${raspuns.status}`);
+                }
+                return raspuns.text();
+            })
+            .then(date => {
+                console.log('Raspuns:', date);
+                localStorage.removeItem("cos_virtual");
+            })
+            .catch(eroare => {
+                console.error('Eroare:', eroare);
+            });
+        };
+
+    </script>
+
+    </body>
+</html>

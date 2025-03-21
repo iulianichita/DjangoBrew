@@ -1,0 +1,11 @@
+{
+    "nume": "Nume",
+    "prenume": "Prenume",
+    "datanasterii": "2005-03-03",
+    "email": "email@domeniu.com",
+    "tip_mesaj": "intrebare",
+    "subiect": "Subiect",
+    "min_zile": 5,
+    "mesaj": "1 2 3 4 5 Nume",
+    "varsta": "19 ani și 9 luni"
+}

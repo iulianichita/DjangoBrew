@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order now</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ordernow.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static 'images/siteicon.png' %}">
+    </head>
+    <body>
+
+    <header>
+        <nav class="navbar">
+
+            <ul class="menu-links">
+                <span id="close-menu-btn" class="material-symbols-outlined">close</span>
+                <li><a href="/aplicatie_ex/main">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle">Menu</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/aplicatie_ex/desert/1/" class="redirect-link">desert</a></li>
+                        <li><a href="/aplicatie_ex/bauturi/1/">drinks</a></li>
+                        <li><a href="/aplicatie_ex/micdejun/1/">breakfast</a></li>
+                    </ul>
+                </li>
+                <img src="{% static 'images/logo-rmvbg.png' %}" alt="logo" class="logo" width="180px">
+                <li><a href="/aplicatie_ex/aboutus">About us</a></li>
+                <li><a href="/aplicatie_ex/contact">Contact us</a></li>
+                {% if not username %}
+                <li><a class = "login_class" href="/aplicatie_ex/login" >Log In</a><li>
+                {% else %}
+                <li><a class = "login_class" href="/aplicatie_ex/loginpage" >Profile</a><li>
+                {% endif %}
+            </ul>
+            <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+            </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="content">
+
+            <form method="post">
+                {% csrf_token %}
+
+                    <div id="form-img">
+                        <img src="{% static 'images/coffeebean-coffeeshop.jpg' %}" alt="" width="260px">
+                        <h1>Place an order here!</h1>
+                        <p>
+                            Now it's easier than ever to have that delicious breakfast or desert you've been craving for. Just fill in the form below and we'll take care of the rest.
+                        </p>
+                    </div>
+
+                <div id="col1">
+
+                    <div id="nume">{{form.nume.label_tag}} <br/> {{form.nume}}<div class="error">
+                        {% for error in form.nume.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div></div>
+                    
+                    <div id="prenume">{{form.prenume.label_tag}} <br/> {{form.prenume}}<div class="error">
+                        {% for error in form.prenume.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div></div>
+                    
+                    <div id="telefon">{{form.telefon.label_tag}} <br/> {{form.telefon}}
+                    <div class="error">
+                        {% for error in form.telefon.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div></div>
+
+                    <div id="metoda_livrare">{{form.metoda_livrare.label_tag}} <br/> {{form.metoda_livrare}}
+                    <div class="error">
+                        {% for error in form.metoda_livrare.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div></div>
+
+                    <div id="adresa_livrare">{{form.adresa_livrare.label_tag}} <br/> {{form.adresa_livrare}}
+                        <div class="error">
+                            {% for error in form.adresa_livrare.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="locatie_livrare">Locatie <br/> {{form.locatie_livrare}}
+                        <div class="error">
+                            {% for error in form.locatie_livrare.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="col2">
+
+                    <div id="metoda_plata">{{form.metoda_plata.label_tag}} <br/> {{form.metoda_plata}}
+                    <div class="error">
+                        {% for error in form.metoda_plata.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div></div>
+
+                    <div id="bauturi">
+                    <button id="myBtn1" style="width:250px">Check the drinks menu</button>
+                    <div id="myModal1" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+
+                        {% for m in bautura %}
+                        <div class="menu-item">
+                            <div class="checkbox-aligned" style="margin-bottom: 10px">
+                                {{ form.cantitate_micdejuns }}
+                                {{ form.marime_micdejuns }}
+                            </div>
+                            <p style="font-size: 20px;">
+                                <b style="color: #ffaf84;">LEI {{m.pret}}</b>&nbsp;-&nbsp;<b>{{ m.nume }}</b>
+                            </p>
+                            
+                            <p style="font-size: 15px; margin-top: 0px;">({{m.cantitate}}g) &nbsp; 
+
+                                {% if m.ingrediente_bautura.all %}
+                                    {% for i in m.ingrediente_bautura.all %}
+                                        {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                            </p>
+
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    </div>
+                    </div>
+
+                    <div id="micdejuns">
+                    <button id="myBtn2" style="width:250px">Check the breakfast menu</button>
+                    <div id="myModal2" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+
+                        {% for m in micdejun %}
+                        <div class="menu-item">
+
+                            {% comment %} {{ form.micdejuns }} {% endcomment %}
+                            <div class="checkbox-aligned" style="margin-bottom: 10px">
+                                {% comment %} {{ form.micdejun_{{m.id}} }} {% endcomment %}
+                                {{ form.marime_micdejuns }}
+                            </div>
+                            
+                            <p style="font-size: 20px;">
+                                <b style="color: #ffaf84;">LEI {{m.pret}}</b>&nbsp;-&nbsp;<b>{{ m.nume }}</b>
+                            </p>
+                            <p style="font-size: 15px; margin-top: 0px;">({{m.cantitate}}g) &nbsp; 
+
+                                {% if m.ingrediente_mancare.all %}
+                                    {% for i in m.ingrediente_mancare.all %}
+                                        {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                            </p>
+
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    </div>
+                    </div>
+
+                    <div id="deserturi">
+                    <button id="myBtn3" style="width:250px">Check the deserts menu</button>
+                    <div id="myModal3" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+
+                        {% for m in desert %}
+                        <div class="menu-item">
+                            <div class="checkbox-aligned" style="margin-bottom: 10px">{{ form.cantitate_micdejuns }}
+                                {{ form.marime_micdejuns }}
+                            </div>
+                            <p style="font-size: 20px;">
+                                <b style="color: #ffaf84;">LEI {{m.pret}}</b>&nbsp;-&nbsp;<b>{{ m.nume }}</b>
+                            </p>
+                            
+                            <p style="font-size: 15px; margin-top: 0px;">({{m.cantitate}}g) &nbsp; 
+
+                                {% if m.ingrediente_desert.all %}
+                                    {% for i in m.ingrediente_desert.all %}
+                                        {{ i.nume }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                {% endif %}
+
+                            </p>
+
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    </div>
+                    </div>
+
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                                {% for field_name, errors in form.errors.items %}
+                                    {% for error in errors %}
+                                        <p style="color: orange; font-size: 14px">{{ error }}!</p>
+                                    {% endfor %}
+                                {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <div id="bacsis" style="width: 180px; font-weight: 100; font-size: 14px">   Adaugati bacsis? &nbsp; {{form.bacsis}}
+                        <div class="error">
+                            {% for error in form.bacsis.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="bacsisSuma" style="font-weight: 100; margin-top: -10px; font-size: 14px">Suma: &nbsp;{{form.bacsisSuma}}
+                        {% if form.bacsisSuma.help_text %}
+                            <p style="color: grey; font-size: 13px">({{form.bacsisSuma.help_text}})</p>
+                        {% endif %}
+                        <div class="error">
+                            {% for error in form.bacsisSuma.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="confirmare" style="font-weight: 100; margin-top: -10px; font-size: 14px">Plasati comanda? &nbsp; {{ form.confimare }}
+                        <div class="error">
+                            {% for error in form.confirmare.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="btn">
+                        <button type="submit" id="nxtbtn"> ORDER </button>
+                    </div>
+
+                </div>
+
+            </form>
+        
+        </div>
+    </section>
+
+
+    <script>
+        function increaseByZero() {
+            var input = document.getElementsByClassName('styled-cb')[0];
+            input.value = parseInt(input.value) + 0;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const bacsisCheckbox = document.querySelector('input[name="bacsis"]');
+            const bacsisSumaDiv = document.getElementById('bacsisSuma');
+            const metodaLivrareSelect = document.querySelector('select[name="metoda_livrare"]');
+            const adresaLivrareDiv = document.getElementById('adresa_livrare');
+            const locatieLivrareDiv = document.getElementById('locatie_livrare');
+
+            bacsisSumaDiv.style.display = bacsisCheckbox.checked ? 'block' : 'none';
+            adresaLivrareDiv.style.display = 'none';
+            locatieLivrareDiv.style.display = 'block';
+
+            bacsisCheckbox.addEventListener('change', function() {
+                bacsisSumaDiv.style.display = this.checked ? 'block' : 'none';
+            });
+
+            metodaLivrareSelect.addEventListener('change', function() {
+                if (this.value === 'ridicare cafenea') {
+                    adresaLivrareDiv.style.display = 'none';
+                    locatieLivrareDiv.style.display = 'block';
+                } else if (this.value === 'livrare la domiciliu') {
+                    adresaLivrareDiv.style.display = 'block';
+                    locatieLivrareDiv.style.display = 'none';
+                } else {
+                    adresaLivrareDiv.style.display = 'none';
+                    locatieLivrareDiv.style.display = 'none';
+                }
+            });
+        });
+
+        {% comment %} modal bauturi {% endcomment %}
+        var modal1 = document.getElementById("myModal1");
+        var btn1 = document.getElementById("myBtn1");
+        var span1 = document.getElementsByClassName("close")[0];
+        var navbarLinks = document.querySelectorAll(".navbar a");
+        var btnSubmit = document.querySelector("button[type='submit']");
+        
+        btn1.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            modal1.style.display = "block";
+            navbarLinks.forEach(function(link) {
+                link.style.color = "#353535";
+            });
+            btnSubmit.style.display = "none";
+        });
+        span1.onclick = function() {
+            modal1.style.display = "none";
+
+            navbarLinks.forEach(function(link) {
+                link.style.color = "white";
+            });
+            btnSubmit.style.display = "block";
+        }
+
+
+        {% comment %} modal mic dejun {% endcomment %}
+        var modal2 = document.getElementById("myModal2");
+        var btn2 = document.getElementById("myBtn2");
+        var span2 = document.getElementsByClassName("close")[1];
+        
+        btn2.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            modal2.style.display = "block";
+            navbarLinks.forEach(function(link) {
+                link.style.color = "#353535";
+            });
+            btnSubmit.style.display = "none";
+        });
+        span2.onclick = function() {
+            modal2.style.display = "none";
+
+            navbarLinks.forEach(function(link) {
+                link.style.color = "white";
+            });
+            btnSubmit.style.display = "block";
+        }
+
+        {% comment %} modal desert {% endcomment %}
+        var modal3 = document.getElementById("myModal3");
+        var btn3 = document.getElementById("myBtn3");
+        var span3 = document.getElementsByClassName("close")[2];
+
+        btn3.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            modal3.style.display = "block";
+            navbarLinks.forEach(function(link) {
+                link.style.color = "#353535";
+            });
+            btnSubmit.style.display = "none";
+        });
+        span3.onclick = function() {
+            modal3.style.display = "none";
+
+            navbarLinks.forEach(function(link) {
+                link.style.color = "white";
+            });
+            btnSubmit.style.display = "block";
+        }
+
+
+        window.onclick = function(event) {
+            if (event.target == modal1 || event.target == modal2 || event.target == modal3) {
+            modal1.style.display = "none";
+            modal2.style.display = "none";
+            modal3.style.display = "none";
+
+            navbarLinks.forEach(function(link) {
+                link.style.color = "white";
+            });
+            btnSubmit.style.display = "block";
+        }
+        }
+
+    </script>
+
+    </body>
+</html>

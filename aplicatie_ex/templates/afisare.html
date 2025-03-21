@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <title>Prajituri</title>
+    </head>
+    <body>
+
+    {% for prajitura in prajituri %}
+        <h3>{{ prajitura.nume }}</h3>
+            <p>
+                Descriere : {{prajitura.descriere}} <br/>
+                Pret: {{prajitura.pret}} <br/>
+                Gramaj: {{prajitura.gramaj}}g <br/>
+                Temperatura: {{prajitura.temperatura}} <br/>
+                Calorii: {{prajitura.calorii}} <br/>
+                Categorie: {{prajitura.categorie}} <br/>
+                Pt diabetici:
+                {% if prajitura.pt_diabetici == True %}
+                    da
+                {%else%}
+                    nu
+                {%endif%}
+            </p>
+    {% endfor %}
+
+
+    </body>
+</html>

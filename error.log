@@ -1,0 +1,1840 @@
+ERROR 2024-12-03 05:39:59,201 log Internal Server Error: /aplicatie_ex/oferta
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 926, in aloca_oferta
+    Permission.objects.create(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+ERROR 2024-12-03 05:39:59,213 basehttp "GET /aplicatie_ex/oferta HTTP/1.1" 500 153542
+ERROR 2024-12-03 05:40:13,994 log Internal Server Error: /aplicatie_ex/oferta
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 926, in aloca_oferta
+    # Permission.objects.create(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+ERROR 2024-12-03 05:40:14,008 basehttp "GET /aplicatie_ex/oferta HTTP/1.1" 500 153554
+ERROR 2024-12-03 15:19:52,331 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endcomment'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 497, in add_micdejun
+    return render(request, 'add_micdejun.html', {'form': form, 'username': request.user.username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 573, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 45: 'endcomment'. Did you forget to register or load this tag?
+ERROR 2024-12-03 15:19:52,349 basehttp "GET /aplicatie_ex/add_micdejun HTTP/1.1" 500 161215
+ERROR 2024-12-03 15:19:56,244 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endcomment'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 497, in add_micdejun
+    return render(request, 'add_micdejun.html', {'form': form, 'username': request.user.username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 573, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 45: 'endcomment'. Did you forget to register or load this tag?
+ERROR 2024-12-03 15:19:56,251 basehttp "GET /aplicatie_ex/add_micdejun HTTP/1.1" 500 161215
+ERROR 2024-12-03 19:01:27,792 log Internal Server Error: /aplicatie_ex/contact
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 469, in contact_view
+    save_message(form.cleaned_data)
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 484, in save_message
+    json.dump(cleaned_data, file, ensure_ascii=False, indent=4)
+  File "C:\Program Files\Python312\Lib\json\__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type date is not JSON serializable
+ERROR 2024-12-03 19:01:27,798 basehttp "POST /aplicatie_ex/contact HTTP/1.1" 500 112625
+ERROR 2024-12-03 19:55:13,895 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 511, in add_micdejun
+    return render(request, 'add_micdejun.html', {'form': form, 'username': request.user.username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 576, in comment
+    parser.skip_past("endcomment")
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 531, in skip_past
+    self.unclosed_block_tag([endtag])
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 586, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 131: 'comment'. Looking for one of: endcomment.
+ERROR 2024-12-03 19:55:13,907 basehttp "GET /aplicatie_ex/add_micdejun HTTP/1.1" 500 166730
+ERROR 2024-12-03 21:07:18,351 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 508, in add_micdejun
+    micdejun.ingrediente_mancare.set(form.cleaned_data['ingrediente_mancare'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Micdejun (large)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-03 21:07:18,355 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81359
+ERROR 2024-12-03 21:24:14,991 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(4) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(4) already exists.
+
+ERROR 2024-12-03 21:24:15,019 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145003
+ERROR 2024-12-03 21:24:34,905 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(5) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(5) already exists.
+
+ERROR 2024-12-03 21:24:34,917 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145018
+ERROR 2024-12-03 21:28:17,633 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(6) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(6) already exists.
+
+ERROR 2024-12-03 21:28:17,645 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145018
+ERROR 2024-12-03 21:31:09,475 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(7) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(7) already exists.
+
+ERROR 2024-12-03 21:31:09,511 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145004
+ERROR 2024-12-03 21:35:38,334 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(8) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(8) already exists.
+
+ERROR 2024-12-03 21:35:38,340 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145252
+ERROR 2024-12-03 21:38:36,676 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(9) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(9) already exists.
+
+ERROR 2024-12-03 21:38:36,682 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145161
+ERROR 2024-12-03 21:39:15,102 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(10) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(10) already exists.
+
+ERROR 2024-12-03 21:39:15,114 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145045
+ERROR 2024-12-03 21:43:32,123 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(11) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(11) already exists.
+
+ERROR 2024-12-03 21:43:32,137 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145045
+ERROR 2024-12-03 21:43:34,913 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(12) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 506, in add_micdejun
+    micdejun.save()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "aplicatie_ex_mancare_pkey"
+DETAIL:  Key (id)=(12) already exists.
+
+ERROR 2024-12-03 21:43:34,925 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 145045
+ERROR 2024-12-03 21:55:08,844 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 509, in add_micdejun
+    micdejun.ingrediente_mancare.set(form.cleaned_data.get('ingrediente_mancare'))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Iar (regular)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-03 21:55:08,850 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81280
+ERROR 2024-12-03 22:06:40,775 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:06:40,782 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78865
+ERROR 2024-12-03 22:07:30,539 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+CRITICAL 2024-12-03 22:07:30,542 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+ERROR 2024-12-03 22:07:30,632 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 652, in custom_login_view
+    raise Exception("Prea multe logari esuate in mai putin de 2 minute")
+Exception: Prea multe logari esuate in mai putin de 2 minute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 690, in custom_login_view
+    message=f"Au fost detectate {request.session['nr_logari']} incercari esuate.\n"
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'nr_logari'
+ERROR 2024-12-03 22:07:30,641 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 80375
+ERROR 2024-12-03 22:08:20,342 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+CRITICAL 2024-12-03 22:08:20,344 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+ERROR 2024-12-03 22:08:20,398 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 652, in custom_login_view
+    raise Exception("Prea multe logari esuate in mai putin de 2 minute")
+Exception: Prea multe logari esuate in mai putin de 2 minute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 689, in custom_login_view
+    message=f"Au fost detectate {request.session['nr_logari']} incercari esuate.\n"
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'nr_logari'
+ERROR 2024-12-03 22:08:20,402 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 80371
+ERROR 2024-12-03 22:08:23,555 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+CRITICAL 2024-12-03 22:08:23,557 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+ERROR 2024-12-03 22:08:23,651 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 652, in custom_login_view
+    raise Exception("Prea multe logari esuate in mai putin de 2 minute")
+Exception: Prea multe logari esuate in mai putin de 2 minute
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 689, in custom_login_view
+    message=f"Au fost detectate {request.session['nr_logari']} incercari esuate.\n"
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ~~~~~~~~~~~~~^^^^^
+KeyError: 'nr_logari'
+ERROR 2024-12-03 22:08:23,664 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 80501
+ERROR 2024-12-03 22:08:45,168 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+CRITICAL 2024-12-03 22:08:45,169 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+ERROR 2024-12-03 22:09:10,708 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:09:10,710 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:12:18,193 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:12:18,195 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:12:18,275 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 635, in custom_login_view
+    raise Exception("Login cu user-ul admin")
+Exception: Login cu user-ul admin
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 704, in custom_login_view
+    'email': request.user.email
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'email'
+ERROR 2024-12-03 22:12:18,281 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 79391
+ERROR 2024-12-03 22:13:03,338 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:13:03,339 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:13:03,390 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 635, in custom_login_view
+    raise Exception("Login cu user-ul admin")
+Exception: Login cu user-ul admin
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 699, in custom_login_view
+    email = request.user.email
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'email'
+ERROR 2024-12-03 22:13:03,399 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 79371
+ERROR 2024-12-03 22:13:14,483 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:13:14,485 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:13:14,546 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 635, in custom_login_view
+    raise Exception("Login cu user-ul admin")
+Exception: Login cu user-ul admin
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 699, in custom_login_view
+    email = request.user.email
+            ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'email'
+ERROR 2024-12-03 22:13:14,555 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 79499
+ERROR 2024-12-03 22:13:28,908 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:13:28,909 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:13:28,964 log Internal Server Error: /aplicatie_ex/login
+Traceback (most recent call last):
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 635, in custom_login_view
+    raise Exception("Login cu user-ul admin")
+Exception: Login cu user-ul admin
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 706, in custom_login_view
+    'email': email
+             ^^^^^
+UnboundLocalError: cannot access local variable 'email' where it is not associated with a value
+ERROR 2024-12-03 22:13:28,967 basehttp "POST /aplicatie_ex/login HTTP/1.1" 500 75474
+ERROR 2024-12-03 22:14:11,268 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:14:11,270 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:15:09,154 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-03 22:15:09,156 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-03 22:18:40,301 log Internal Server Error: /aplicatie_ex/oferta
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 952, in aloca_oferta
+    Permission.objects.create(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+ERROR 2024-12-03 22:18:40,309 basehttp "GET /aplicatie_ex/oferta HTTP/1.1" 500 153097
+ERROR 2024-12-03 22:22:39,165 log Internal Server Error: /aplicatie_ex/oferta
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 953, in aloca_oferta
+    Permission.objects.create(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_permission_content_type_id_codename_01ab375a_uniq"
+DETAIL:  Key (content_type_id, codename)=(15, vizualizare_oferta) already exists.
+
+ERROR 2024-12-03 22:22:39,174 basehttp "GET /aplicatie_ex/oferta HTTP/1.1" 500 153593
+ERROR 2024-12-03 22:26:30,721 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:26:30,729 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78611
+ERROR 2024-12-03 22:27:06,069 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:27:06,075 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78462
+ERROR 2024-12-03 22:27:33,758 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:27:33,762 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78726
+ERROR 2024-12-03 22:27:37,225 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:27:37,228 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78461
+ERROR 2024-12-03 22:27:53,370 log Internal Server Error: /aplicatie_ex/logout
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 593, in logout_view
+    permission = Permission.objects.get(codename='vizualizare_oferta')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+django.contrib.auth.models.Permission.DoesNotExist: Permission matching query does not exist.
+ERROR 2024-12-03 22:27:53,375 basehttp "GET /aplicatie_ex/logout HTTP/1.1" 500 78461
+ERROR 2024-12-05 16:43:07,056 views cineva incearca sa se conecteze cu user-ul admin
+CRITICAL 2024-12-05 16:43:07,060 views cineva incearca sa se conecteze cu user-ul admin
+ERROR 2024-12-05 16:58:37,407 log Internal Server Error: /aplicatie_ex/micdejun_view/13/
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 997, in micdejun_view
+    return render(request, 'micdejun_view.html', {'mancare_item': mancare_item})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\defaulttags.py", line 198, in render
+    values = list(values)
+             ^^^^^^^^^^^^
+TypeError: 'ManyRelatedManager' object is not iterable
+ERROR 2024-12-05 16:58:37,416 basehttp "GET /aplicatie_ex/micdejun_view/13/ HTTP/1.1" 500 107877
+ERROR 2024-12-05 18:15:12,542 log Internal Server Error: /aplicatie_ex/register
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 619, in register_view
+    form.save()
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\forms.py", line 440, in save
+    trimite_mail(user.last_name, user.first_name, user.username, user.cod, user.email)
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\forms.py", line 462, in trimite_mail
+    html_content = render_to_string('emailtemplate.html', context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+               ^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 605, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\template\base.py", line 706, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '} url' from '} url'
+ERROR 2024-12-05 18:15:12,564 basehttp "POST /aplicatie_ex/register HTTP/1.1" 500 150579
+ERROR 2024-12-05 18:22:00,818 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:22:00,825 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:22:01,212 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:22:01,222 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:32,994 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:33,001 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:36,882 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:36,886 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:36,889 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:36,894 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,945 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,950 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,964 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,965 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,971 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:27:43,972 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2024-12-05 18:54:52,194 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+CRITICAL 2024-12-05 18:54:52,196 views un user a avut mai mult de 3 logari esuate in mai putin de 2 minute
+ERROR 2024-12-05 19:05:53,801 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 519, in add_micdejun
+    micdejun.save_m2m()
+    ^^^^^^^^^^^^^^^^^
+AttributeError: 'Mancare' object has no attribute 'save_m2m'
+ERROR 2024-12-05 19:05:53,815 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 71536
+ERROR 2024-12-05 19:10:11,506 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 518, in add_micdejun
+    print(micdejun.ingrediente_mancare)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Numeeeea (regular)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-05 19:10:11,517 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81765
+ERROR 2024-12-05 19:11:44,281 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 518, in add_micdejun
+    print(micdejun.ingrediente_mancare)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Numeeeea (regular)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-05 19:11:44,288 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81890
+ERROR 2024-12-05 19:11:47,969 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 518, in add_micdejun
+    print(micdejun.ingrediente_mancare)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Numeeeea (regular)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-05 19:11:47,979 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81890
+ERROR 2024-12-05 19:12:00,177 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 518, in add_micdejun
+    print(micdejun.ingrediente_mancare)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 656, in __get__
+    return self.related_manager_cls(instance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\db\models\fields\related_descriptors.py", line 1076, in __init__
+    raise ValueError(
+ValueError: "<Mancare: Numeeeeaa (regular)>" needs to have a value for field "id" before this many-to-many relationship can be used.
+ERROR 2024-12-05 19:12:00,186 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 81769
+ERROR 2024-12-05 19:48:29,882 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 527, in add_micdejun
+    micdejun.save_model(request, Mancare, form, True)
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Mancare' object has no attribute 'save_model'
+ERROR 2024-12-05 19:48:29,893 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 71677
+ERROR 2024-12-05 19:49:36,703 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 527, in add_micdejun
+    micdejun.save_model(request, Mancare, form, True)
+    ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Mancare' object has no attribute 'save_model'
+ERROR 2024-12-05 19:49:36,709 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 71805
+ERROR 2024-12-05 19:51:10,362 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 528, in add_micdejun
+    form.save_model()
+    ^^^^^^^^^^^^^^^
+AttributeError: 'MicdejunForm' object has no attribute 'save_model'
+ERROR 2024-12-05 19:51:10,369 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 71682
+ERROR 2024-12-05 19:56:46,787 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 520, in add_micdejun
+    micdejun.save_model()
+TypeError: Mancare.save_model() missing 4 required positional arguments: 'request', 'obj', 'form', and 'change'
+ERROR 2024-12-05 19:56:46,794 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 71889
+ERROR 2024-12-05 19:57:20,275 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 520, in add_micdejun
+    micdejun.save_model(request, Mancare, form, True)
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\models.py", line 108, in save_model
+    if obj.copy_m2m_from:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Mancare' has no attribute 'copy_m2m_from'
+ERROR 2024-12-05 19:57:20,285 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 76667
+ERROR 2024-12-05 20:01:47,883 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 520, in add_micdejun
+    micdejun.save_model(request, Mancare, form, True)
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\models.py", line 108, in save_model
+    if obj.copy_m2m_from:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Mancare' has no attribute 'copy_m2m_from'
+ERROR 2024-12-05 20:01:47,892 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 76722
+ERROR 2024-12-05 20:02:12,028 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 520, in add_micdejun
+    micdejun.save_model(request, Mancare, form, True)
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\models.py", line 108, in save_model
+    if obj.copy_m2m_from:
+       ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Mancare' has no attribute 'copy_m2m_from'
+ERROR 2024-12-05 20:02:12,036 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 76603
+ERROR 2024-12-09 19:02:02,714 log Internal Server Error: /aplicatie_ex/add_micdejun
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\views.py", line 510, in add_micdejun
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\forms\forms.py", line 197, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\forms\forms.py", line 192, in errors
+    self.full_clean()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\forms\forms.py", line 325, in full_clean
+    self._clean_fields()
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\forms\forms.py", line 335, in _clean_fields
+    value = getattr(self, "clean_%s" % name)()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\forms.py", line 334, in clean_categorie
+    if len(data) < 3:
+       ^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+ERROR 2024-12-09 19:02:02,726 basehttp "POST /aplicatie_ex/add_micdejun HTTP/1.1" 500 91814
+ERROR 2024-12-09 19:54:16,440 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 79, in location
+    return item.get_absolute_url()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\models.py", line 118, in get_absolute_url
+    return reverse('micdejun_view', kwargs={'id': self.id})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun_view' with keyword arguments '{'id': 39}' not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun_view/(?P<item_id>[0-9]+)/\\Z']
+ERROR 2024-12-09 19:54:16,451 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 114642
+ERROR 2024-12-09 19:54:35,930 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 79, in location
+    return item.get_absolute_url()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\models.py", line 118, in get_absolute_url
+    return reverse('micdejun_view', kwargs={'item_id': self.id})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun_view' with keyword arguments '{'id': 39}' not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun_view/(?P<item_id>[0-9]+)/\\Z']
+ERROR 2024-12-09 19:54:35,936 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 114917
+ERROR 2024-12-09 19:54:37,603 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\sitemaps.py", line 31, in location
+    return reverse(item)
+           ^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun' with no arguments not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun/(?P<no_page>\\d+)/$']
+ERROR 2024-12-09 19:54:37,607 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 114828
+ERROR 2024-12-09 19:54:56,811 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\sitemaps.py", line 31, in location
+    return reverse(item)
+           ^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun' with no arguments not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun/(?P<no_page>\\d+)/$']
+ERROR 2024-12-09 19:54:56,818 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 114806
+ERROR 2024-12-09 20:15:18,116 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\sitemaps.py", line 31, in location
+    return reverse(item)
+           ^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun' with no arguments not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun/(?P<no_page>\\d+)/$']
+ERROR 2024-12-09 20:15:18,122 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 111222
+ERROR 2024-12-09 20:15:24,607 log Internal Server Error: /aplicatie_ex/sitemap.xml
+Traceback (most recent call last):
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 23, in inner
+    response = func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\views.py", line 117, in sitemap
+    urls.extend(site.get_urls(page=page, site=req_site, protocol=req_protocol))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 104, in get_urls
+    return self._urls(page, protocol, domain)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 124, in _urls
+    loc = f"{protocol}://{domain}{self._location(item)}"
+                                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 69, in _location
+    return self._get("location", item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\contrib\sitemaps\__init__.py", line 39, in _get
+    return attr(item)
+           ^^^^^^^^^^
+  File "C:\Users\nichi\OneDrive\Desktop\uni\django\cafenea\aplicatie_ex\sitemaps.py", line 31, in location
+    return reverse(item)
+           ^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nichi\AppData\Roaming\Python\Python312\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'micdejun' with no arguments not found. 1 pattern(s) tried: ['aplicatie_ex/micdejun/(?P<no_page>\\d+)/$']
+ERROR 2024-12-09 20:15:24,612 basehttp "GET /aplicatie_ex/sitemap.xml HTTP/1.1" 500 111222

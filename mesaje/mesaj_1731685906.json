@@ -1,0 +1,10 @@
+{
+    "nume": "Nichita",
+    "prenume": "iulia",
+    "email": "email@domeniu.com",
+    "tip_mesaj": "reclamatie",
+    "subiect": "Subiect",
+    "min_zile": 4,
+    "mesaj": "mesaj de 5 cuvinte da Nichita",
+    "varsta": "19 ani și 11 luni"
+}
